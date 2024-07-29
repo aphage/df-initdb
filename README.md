@@ -50,6 +50,7 @@ sudo docker run --rm -it \
 --user="$(id -u)":"$(id -g)" \
 --mount type=bind,source="$(pwd)"/docker-entrypoint-initdb.d,target=/docker-entrypoint-initdb.d \
 --mount type=bind,src="$(pwd)"/mysql,target=/var/lib/mysql \
+--mount type=bind,src="$(pwd)"/my.cnf,target=/etc/my.cnf \
 --name df-mysql \
 mysql:5.0.96
 ```
